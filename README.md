@@ -156,6 +156,32 @@ cd LAVIS
 pip install -e .
 ```
 
+## Installation on PathAI cluster
+
+1. Use the fm-
+2. (Optional) Creating conda environment
+
+```bash
+conda create -n lavis python=3.10
+conda activate lavis
+```
+
+3. Install CUDA toolkit and `torch/torchvision`
+```bash
+conda install cudatoolkit=11.7 -c pytorch
+pip install https://download.pytorch.org/whl/cu117/torch-2.0.1%2Bcu117-cp310-cp310-linux_x86_64.whl
+pip install https://download.pytorch.org/whl/cu117/torchvision-0.15.2%2Bcu117-cp310-cp310-linux_x86_64.whl#sha256=1ee57f2bee878ad8574ea559bb7172c1cfaad168634fa738479e1fe3bdd7eaca
+conda install -c conda-forge cudatoolkit-dev
+```
+    
+4. Install other requirement
+
+```bash
+git clone https://github.com/salesforce/LAVIS.git
+cd LAVIS
+pip install -r requirements_pathai.txt
+```
+
 ## Getting Started
 ### Model Zoo
 Model zoo summarizes supported models in LAVIS, to view:
