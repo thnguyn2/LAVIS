@@ -33,7 +33,6 @@ def download_datasets(root, url):
 if __name__ == "__main__":
 
     config_path = get_abs_path("configs/datasets/coco/defaults_cap.yaml")
-
     storage_dir = OmegaConf.load(
         config_path
     ).datasets.coco_caption.build_info.images.storage

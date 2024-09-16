@@ -166,10 +166,11 @@ conda create -n lavis python=3.10
 conda activate lavis
 ```
 
-3. Install CUDA toolkit and `torch/torchvision`
+3. Install CUDA toolkit and `torch/torchaudio/torchvision`
 ```bash
 conda install cudatoolkit=11.7 -c pytorch
 pip install https://download.pytorch.org/whl/cu117/torch-2.0.1%2Bcu117-cp310-cp310-linux_x86_64.whl
+pip install https://download.pytorch.org/whl/cu117/torchaudio-0.13.0%2Bcu117-cp310-cp310-linux_x86_64.whl#sha256=1e57b2c836e3788a026fbde74d793dcacfb25b6a9632d7c950d5b8429e3b7828
 pip install https://download.pytorch.org/whl/cu117/torchvision-0.15.2%2Bcu117-cp310-cp310-linux_x86_64.whl#sha256=1ee57f2bee878ad8574ea559bb7172c1cfaad168634fa738479e1fe3bdd7eaca
 conda install -c conda-forge cudatoolkit-dev
 ```
@@ -182,6 +183,7 @@ cd LAVIS
 pip install -r requirements_pathai.txt
 ```
 
+5. To run the notebook in VS Code, you will need to modify the `jupyter.notebookFileRoot` to `${workspaceFolder}`, see [this thread](https://stackoverflow.com/questions/57422899/modulenotfounderror-no-module-named-jupyter-notebooks)
 ## Getting Started
 ### Model Zoo
 Model zoo summarizes supported models in LAVIS, to view:

@@ -113,8 +113,9 @@ class BaseDatasetBuilder:
 
         splits = anns.keys()
 
-        cache_root = registry.get_path("cache_root")
-
+        #cache_root = registry.get_path("cache_root")
+        cache_root = "/jupyter-users-home/tan-2enguyen/datasets/vlm"
+        
         for split in splits:
             info = anns[split]
 

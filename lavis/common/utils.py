@@ -33,7 +33,7 @@ from torchvision.datasets.utils import (
     extract_archive,
 )
 
-
+_DOWNLOAD_TO_PATHAI_CLUSTER = True
 def now():
     from datetime import datetime
 
@@ -46,7 +46,10 @@ def is_url(url_or_filename):
 
 
 def get_cache_path(rel_path):
-    return os.path.expanduser(os.path.join(registry.get_path("cache_root"), rel_path))
+    if _DOWNLOAD_TO_PATHAI_CLUSTER:
+        return os.path.join("/jupyter-users-home/tan-2enguyen/datasets/vlm", rel_path)
+    else:
+        return os.path.expanduser(os.path.join(registry.get_path("cache_root"), rel_path))
 
 
 def get_abs_path(rel_path):

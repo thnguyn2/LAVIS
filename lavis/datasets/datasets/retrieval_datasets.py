@@ -33,7 +33,6 @@ class RetrievalDataset(BaseDataset, __DisplMixin):
         ann_root (string): directory to store the annotation file
         """
         super().__init__(vis_processor, text_processor, vis_root, ann_paths)
-
         self.img_ids = {}
         n = 0
         for ann in self.annotation:
