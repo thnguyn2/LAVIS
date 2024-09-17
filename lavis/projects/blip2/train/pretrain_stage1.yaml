@@ -19,9 +19,10 @@ datasets:
     text_processor:
         train:
           name: "blip_caption"
-#     build_info:
-#         images:
-#             storage: '/export/share/datasets/vision/coco/images/'          
+    build_info:
+        images:
+            storage: '/jupyter-users-home/tan-2enguyen/datasets/vlm/coco/images'         
+             
   vg_caption: # name of the dataset builder
     vis_processor:
         train:
@@ -30,9 +31,9 @@ datasets:
     text_processor:
         train:
           name: "blip_caption"
-#     build_info:
-#         images:
-#             storage: '//export/share/datasets/vision/visual-genome/image/'
+    build_info:
+        images:
+            storage: '/jupyter-users-home/tan-2enguyen/datasets/vlm/vg/images'
 
 run:
   task: image_text_pretrain

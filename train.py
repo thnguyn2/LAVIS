@@ -34,7 +34,7 @@ from lavis.tasks import *
 
 def parse_args():
     parser = argparse.ArgumentParser(description="Training")
-
+    parser.add_argument("--local_rank", type=int, default=0)
     parser.add_argument("--cfg-path", required=True, help="path to configuration file.")
     parser.add_argument(
         "--options",

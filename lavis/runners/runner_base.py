@@ -192,6 +192,7 @@ class RunnerBase:
             )
 
             datasets = reorg_datasets_by_split(self.datasets)
+             
             self.datasets = concat_datasets(datasets)
 
             # print dataset statistics after concatenation/chaining

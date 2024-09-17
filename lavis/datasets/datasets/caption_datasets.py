@@ -45,7 +45,6 @@ class CaptionDataset(BaseDataset, __DisplMixin):
 
         # TODO this assumes image input, not general enough
         ann = self.annotation[index]
-
         image_path = os.path.join(self.vis_root, ann["image"])
         try:
             image = Image.open(image_path).convert("RGB")

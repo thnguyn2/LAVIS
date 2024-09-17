@@ -7,5 +7,4 @@ env:
   # For default users
   # cache_root: "cache"
   # For internal use with persistent storage
-  #cache_root: "/export/home/.cache/lavis"
   cache_root: "/jupyter-users-home/tan-2enguyen/datasets/vlm"
