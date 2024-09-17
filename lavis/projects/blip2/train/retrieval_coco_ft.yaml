@@ -31,7 +31,7 @@ datasets:
           name: "blip_caption"
     build_info:
         images:
-            storage: '/export/share/datasets/vision/coco/images/'
+            storage: '/jupyter-users-home/tan-2enguyen/datasets/vlm/coco/images'
 
 run:
   task: retrieval
