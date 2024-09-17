@@ -10,16 +10,19 @@ model:
 datasets:
   coco_caption: # name of the dataset builder
     vis_processor:
-        train:
-          name: "blip_image_train"
-        eval:
-          name: "blip_image_eval"
+      train:
+        name: "blip_image_train"
+      eval:
+        name: "blip_image_eval"
     text_processor:
-        train:
-          name: "blip_caption"
-          prompt: "a picture of "
-        eval:
-          name: "blip_caption"
+      train:
+        name: "blip_caption"
+        prompt: "a picture of "
+      eval:
+        name: "blip_caption"
+    build_info:
+      images:
+        storage: '/jupyter-users-home/tan-2enguyen/datasets/vlm/coco/images'
 
 run:
   runner: runner_iter
