@@ -9,7 +9,8 @@
 
 Place data from: https://ai.google.com/research/ConceptualCaptions/download in this folder
 
-`Train_GCC-training.tsv / cc3m.tsv` Training Split (3,318,333)
+`Train_GCC-training.tsv / cc12m.tsv` Training Split (3,318,333)
+You can download `cc12m.tsv` with `wget https://storage.googleapis.com/conceptual_12m/cc12m.tsv`
 
 run `download_data_cc3m.py` or `download_data_cc12m.py`.
 

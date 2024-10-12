@@ -42,13 +42,15 @@ def fetch_single_image(image_url, timeout=None, retries=0):
 
 
 def download_and_save_image(ann, save_dir, timeout=None, retries=0):
-    image = fetch_single_image(ann["url"], timeout=timeout, retries=retries)
-
-    if image is not None:
-        image_path = os.path.join(save_dir, ann["image"])
-        print(image_path)
-        image.save(image_path)
-
+    image_path = os.path.join(save_dir, ann["image"])
+        
+    if not pathlib.Path(image_path).exists():
+        image = fetch_single_image(ann["url"], timeout=timeout, retries=retries)
+        if image is not None: 
+            print(image_path)
+            image.save(image_path)
+        else:
+            print(f"Can't find {ann['url']}")
 
 if __name__ == "__main__":
 
@@ -60,16 +62,13 @@ if __name__ == "__main__":
 
     storage_dir = pathlib.Path(get_cache_path(storage_dir))
 
-    if storage_dir.exists():
-        print(f"Dataset already exists at {storage_dir}. Aborting.")
-        exit(0)
-
     storage_dir.mkdir(parents=True, exist_ok=True)
 
-    num_threads = 20
+    num_threads = 16
     dset = load_dataset("sbu_caption")["train"].annotation
 
     print("Downloading dataset...")
+    
     # multiprocessing
     with ThreadPoolExecutor(max_workers=num_threads) as executor:
         for ann in tqdm.tqdm(dset):
@@ -80,3 +79,4 @@ if __name__ == "__main__":
                 timeout=30,
                 retries=10,
             )
+    

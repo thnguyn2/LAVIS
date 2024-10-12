@@ -158,7 +158,7 @@ pip install -e .
 
 ## Installation on PathAI cluster
 
-1. Use the fm-
+1. Use the fm-dev image.
 2. (Optional) Creating conda environment
 
 ```bash

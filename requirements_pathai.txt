@@ -22,8 +22,7 @@ spacy
 streamlit
 timm==0.4.12
 tqdm
-#transformers==4.33.2
-transformers>=4.27
+transformers==4.33.2
 webdataset
 wheel
 torchaudio
